@@ -4,18 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbActionsModule, NbSidebarModule, NbMenuModule} from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbActionsModule,
+  NbSidebarModule,
+  NbMenuModule,
+  NbButtonModule
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { RandomizeLayoutComponent } from './components/randomize-layout/randomize-layout.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RandomizeLayoutComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +36,8 @@ import { MenuComponent } from './components/menu/menu.component';
     NbActionsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
-    NbMenuModule
+    NbMenuModule,
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

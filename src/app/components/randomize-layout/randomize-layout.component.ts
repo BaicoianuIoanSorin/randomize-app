@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import {NbSidebarService} from "@nebular/theme";
+import {MenuTitles} from "../constants/MenuEnum";
 
 @Component({
   selector: 'randomize-layout',
   template: `
     <nb-layout>
       <nb-layout-header fixed>
-        <a href="#" (click)="toggle()"><i class="nb-menu"></i></a>
+        <nb-actions class="position-right">
+          <nb-action icon="lock-outline" link="auth"></nb-action>
+        </nb-actions>
       </nb-layout-header>
 
       <nb-sidebar>
@@ -14,7 +17,6 @@ import {NbSidebarService} from "@nebular/theme";
       </nb-sidebar>
 
       <nb-layout-column class="colored-column-basic">
-        <router-outlet></router-outlet>
       </nb-layout-column>
     </nb-layout>
   `,
@@ -28,5 +30,9 @@ export class RandomizeLayoutComponent {
   toggle() {
     this.sidebarService.toggle(true);
     return false;
+  }
+
+  MenuTitles(): typeof MenuTitles {
+    return MenuTitles;
   }
 }

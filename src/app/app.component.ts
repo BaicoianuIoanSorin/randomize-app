@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {Routes} from "@angular/router";
+import {LoginComponent} from "./login/login.component";
 
 @Component({
   selector: 'app-root',
   template:`
     <randomize-layout/>
+    <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
 })

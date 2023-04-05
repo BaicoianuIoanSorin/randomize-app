@@ -7,8 +7,13 @@ export enum MenuTitles {
 
 export const MENU_GENERAL_ITEMS: NbMenuItem[] = [
   {
+    title: 'Home',
+    link: '/',
+    icon: 'home-outline'
+  },
+  {
     title: MenuTitles.AUTHENTICATE,
     link: 'auth',
-    icon: 'plus-outline',
+    icon: 'lock-outline',
   }
 ]
