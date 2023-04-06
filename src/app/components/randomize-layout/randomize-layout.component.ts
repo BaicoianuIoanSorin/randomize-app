@@ -5,30 +5,41 @@ import {MenuTitles} from "../constants/MenuEnum";
 @Component({
   selector: 'randomize-layout',
   template: `
-    <nb-layout>
-      <nb-layout-header fixed>
-        <nb-actions class="position-right">
-          <nb-action icon="lock-outline" link="auth"></nb-action>
-        </nb-actions>
-      </nb-layout-header>
+      <nb-layout>
+          <nb-layout-header fixed>
+              <nb-actions class="position-right">
+                  <nb-action
+                          (click)="toggle()"
+                          [icon]="isToggled ? 'arrowhead-right-outline' : 'arrowhead-left-outline'"
+                          [ngStyle]="{'cursor' : 'pointer'}"
+                  ></nb-action>
+              </nb-actions>
+              <nb-actions class="position-right">
+                  <nb-action icon="lock-outline" link="auth"></nb-action>
+              </nb-actions>
+          </nb-layout-header>
 
-      <nb-sidebar>
-        <randomize-menu/>
-      </nb-sidebar>
+          <nb-sidebar>
+              <randomize-menu></randomize-menu>
+          </nb-sidebar>
 
-      <nb-layout-column class="colored-column-basic">
-      </nb-layout-column>
-    </nb-layout>
+          <nb-layout-column class="colored-column-basic">
+              <router-outlet></router-outlet>
+          </nb-layout-column>
+      </nb-layout>
   `,
   styleUrls: ['./randomize-layout.component.scss']
 })
 export class RandomizeLayoutComponent {
+
+  isToggled: boolean = false;
 
   constructor(private sidebarService: NbSidebarService) {
   }
 
   toggle() {
     this.sidebarService.toggle(true);
+    this.isToggled = !this.isToggled;
     return false;
   }
 

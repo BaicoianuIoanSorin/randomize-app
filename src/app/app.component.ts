@@ -6,7 +6,6 @@ import {LoginComponent} from "./login/login.component";
   selector: 'app-root',
   template:`
     <randomize-layout/>
-    <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
 })
