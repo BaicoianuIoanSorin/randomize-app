@@ -6,20 +6,23 @@ import {MenuTitles} from "../constants/MenuEnum";
   selector: 'randomize-layout',
   template: `
       <nb-layout>
-          <nb-layout-header fixed>
-              <nb-actions class="position-right">
-                  <nb-action
-                          (click)="toggle()"
-                          [icon]="isToggled ? 'arrowhead-right-outline' : 'arrowhead-left-outline'"
-                          [ngStyle]="{'cursor' : 'pointer'}"
-                  ></nb-action>
-              </nb-actions>
-              <nb-actions class="position-right">
-                  <nb-action icon="lock-outline" link="auth"></nb-action>
-              </nb-actions>
-          </nb-layout-header>
+        <nb-layout-header fixed>
+          <div class="positioning-items">
+            <nb-actions>
+              <nb-action
+                (click)="toggle()"
+                [icon]="isToggled ? 'arrowhead-right-outline' : 'arrowhead-left-outline'"
+                [ngStyle]="{'cursor' : 'pointer'}"
+              ></nb-action>
+            </nb-actions>
+            <nb-actions>
+              <nb-action icon="lock-outline" link="auth"></nb-action>
+            </nb-actions>
+          </div>
+        </nb-layout-header>
 
-          <nb-sidebar>
+
+        <nb-sidebar>
               <randomize-menu></randomize-menu>
           </nb-sidebar>
 
